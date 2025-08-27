@@ -1,0 +1,31 @@
+@startuml
+title Punto 3 - Inventory Optimization (Strategy)
+
+class InventoryStructure {
+  +products: number
+  +warehouses: number
+  +shelves: number
+  +distributionCenters: number
+  +factories: number
+}
+
+interface OptimizationAlgorithm {
+  +name: string
+  +analyze(structure: InventoryStructure): string
+}
+
+class SimpleReorder implements OptimizationAlgorithm
+class BalanceWarehouses implements OptimizationAlgorithm
+
+class InventoryContext {
+  -algorithm: OptimizationAlgorithm
+  +setAlgorithm(a: OptimizationAlgorithm)
+  +run(structure: InventoryStructure): string
+}
+
+InventoryContext --> OptimizationAlgorithm : uses
+OptimizationAlgorithm <|.. SimpleReorder
+OptimizationAlgorithm <|.. BalanceWarehouses
+
+@enduml
+

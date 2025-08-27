@@ -1,0 +1,27 @@
+@startuml
+title Punto 4 - Decorator (Savings Account Rules)
+
+interface Account {
+  +deposit(amount: number)
+  +withdraw(amount: number)
+  +balance(): number
+}
+
+class SavingsAccount implements Account
+
+abstract class AccountDecorator implements Account {
+  -account: Account
+}
+
+class WeeklyWithdrawLimit extends AccountDecorator
+class LargeWithdrawAuthorization extends AccountDecorator
+class AMLDepositNotifier extends AccountDecorator
+
+AccountDecorator --> Account : wraps
+Account <|.. SavingsAccount
+AccountDecorator <|-- WeeklyWithdrawLimit
+AccountDecorator <|-- LargeWithdrawAuthorization
+AccountDecorator <|-- AMLDepositNotifier
+
+@enduml
+

@@ -1,0 +1,32 @@
+@startuml
+title Punto 5 - Singleton + Facade + Observer
+
+class AppConfig {
+  -instance: AppConfig
+  +getInstance(): AppConfig
+}
+
+class PaymentGateway
+class InventoryService
+class ShopFacade {
+  -pay: PaymentGateway
+  -inv: InventoryService
+  +checkout(sku: string, amount: number): string
+}
+
+interface Observer { +update(price: number) }
+class EmailNotifier implements Observer
+class PriceSubject {
+  -observers: Observer[]
+  +attach(o: Observer)
+  +detach(o: Observer)
+  +setPrice(p: number)
+}
+
+ShopFacade --> PaymentGateway
+ShopFacade --> InventoryService
+Observer <|.. EmailNotifier
+PriceSubject --> Observer : notifies
+
+@enduml
+

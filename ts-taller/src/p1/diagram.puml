@@ -1,0 +1,24 @@
+@startuml
+title Punto 1 - Strategy (Sorting)
+
+interface SortStrategy {
+  +sort(values: number[], order: "asc"|"desc"): number[]
+}
+
+class BubbleSort implements SortStrategy
+class InsertionSort implements SortStrategy
+class QuickSort implements SortStrategy
+
+class SortContext {
+  -strategy: SortStrategy
+  +setStrategy(s: SortStrategy)
+  +execute(values: number[], order: "asc"|"desc"): number[]
+}
+
+SortContext --> SortStrategy : uses
+SortStrategy <|.. BubbleSort
+SortStrategy <|.. InsertionSort
+SortStrategy <|.. QuickSort
+
+@enduml
+

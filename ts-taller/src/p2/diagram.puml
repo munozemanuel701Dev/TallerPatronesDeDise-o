@@ -1,0 +1,26 @@
+@startuml
+title Punto 2 - Strategy + Factory (Installments)
+
+interface CreditCardFormula {
+  +name: string
+  +calculate(totalCash: number, installments: number, bank: string, date: Date): number
+}
+
+class VisaFormula implements CreditCardFormula
+class MasterFormula implements CreditCardFormula
+
+class FormulaFactory {
+  +create(brand: string): CreditCardFormula
+}
+
+class QuoteUseCase {
+  +quoteInstallments(cashPrice, installments, brand, bank, date)
+}
+
+CreditCardFormula <|.. VisaFormula
+CreditCardFormula <|.. MasterFormula
+FormulaFactory --> CreditCardFormula : creates
+QuoteUseCase --> CreditCardFormula : uses
+
+@enduml
+
