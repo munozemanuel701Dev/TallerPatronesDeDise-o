@@ -14,10 +14,12 @@ class ShopFacade {
   +checkout(sku: string, amount: number): string
 }
 
-interface Observer { +update(price: number) }
+interface Observer {
+  +update(price: number)
+}
 class EmailNotifier implements Observer
 class PriceSubject {
-  -observers: Observer[]
+  -observers: List<Observer>
   +attach(o: Observer)
   +detach(o: Observer)
   +setPrice(p: number)
