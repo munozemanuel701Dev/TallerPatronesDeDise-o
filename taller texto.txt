@@ -1,0 +1,27 @@
+
+1.	Se tienen tres algoritmos de ordenación: burbuja, quick sort, insert sort. El usuario puede seleccionar el si desea en orden ascendente o descendente. 
+2.	El precio en cuotas de un producto depende de: 
+•	Cantidad de cuotas 
+•	Marca de tarjeta de crédito: 
+o	Cada tarjeta de crédito tiene su fórmula para calcular. 
+o	Los intereses (Por ejemplo, pude depender del día de la semana) o Banco emisor de la tarjeta 
+•	El usuario selecciona un producto. 
+•	Luego ingresa la cantidad de cuotas, marca y banco de la tarjeta. 
+•	El sistema muestra el precio al contado, el precio en cuotas y el monto de la cuota. 
+
+3.	Control de inventario u optimización de inventario: 
+•	Agregar más algoritmos, eliminar algoritmos, editar algoritmos 
+•	Generar diferentes versiones del sistema. (Algoritmo diferente → Diferentes clientes) 
+•	Poder cambiar el algoritmo en tiempo de ejecución (Escenario de simulación) 
+(foto1)
+
+4. Se parte que ya esta desarrollado un módulo de caja de ahorros que tiene las subrutinas depositar(dinero)– retirar(dinero) – saldo():dinero, este modulo esta funcionando de muy buena manera. 
+Los nuevos requisitos son: 
+•	No mas de dos retiros por semana 
+•	Retiros mayores a $10X se requiere de una autorización. 
+•	Depósitos de mas de mas de $5X se comunica a control de lavado de dinero. 
+
+5. Del archivo patrones de diseño master se debe elegir un patrón de creacional, un patrón de estructural y un patrón de comportamientos y pasarlo a otro lenguaje de programación y su respectivo diagrama de clase. 
+ 
+PD 1: Si realiza los ejercicios del 1 al 4 puede realizar el punto 5, en caso de no realizarlos se debe elegir de la carpeta PatronesDeDiseñoTaller un ejercicio de cada patrón pasarlo a otro lenguaje. 
+PD 2: realizar el diagrama de clases se debe realizar para cada ejercicio. 
