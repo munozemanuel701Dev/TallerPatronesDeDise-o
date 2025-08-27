@@ -24,4 +24,9 @@ Estructura:
 
 Cada carpeta contiene `demo.ts` que se orquesta desde `src/index.ts`.
 
+Para ver diagramas:
+1. Instalar la extensión "PlantUML" en VS Code
+2. Abrir cualquier archivo .puml (ej: src/p1/diagram.puml)
+3. Presionar Alt+D para previsualizar el diagrama
+4. Los diagramas se actualizan automáticamente al guardar cambios
 
